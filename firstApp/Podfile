@@ -8,5 +8,7 @@ target 'firstApp' do
   # Pods for firstApp
   pod 'Alamofire'
   pod 'SwiftGen'
+  pod 'SwiftLint'
+
 
 end
