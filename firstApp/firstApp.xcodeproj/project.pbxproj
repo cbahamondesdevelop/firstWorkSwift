@@ -14,6 +14,7 @@
 		CE3AA37328C8F4A100148656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3AA37128C8F4A100148656 /* Main.storyboard */; };
 		CE3AA37528C8F4A300148656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3AA37428C8F4A300148656 /* Assets.xcassets */; };
 		CE3AA37828C8F4A300148656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3AA37628C8F4A300148656 /* LaunchScreen.storyboard */; };
+		CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E182C28CA43BC00CBA179 /* TestClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CE3AA37428C8F4A300148656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE3AA37728C8F4A300148656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE3AA37928C8F4A300148656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3E182C28CA43BC00CBA179 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				0185901CA7D5A1B9002E62B2 /* Pods-firstApp.debug.xcconfig */,
 				5AE32C679F9502B53B6847E5 /* Pods-firstApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +85,7 @@
 				CE3AA36B28C8F4A100148656 /* AppDelegate.swift */,
 				CE3AA36D28C8F4A100148656 /* SceneDelegate.swift */,
 				CE3AA36F28C8F4A100148656 /* ViewController.swift */,
+				CE3E182C28CA43BC00CBA179 /* TestClass.swift */,
 				CE3AA37128C8F4A100148656 /* Main.storyboard */,
 				CE3AA37428C8F4A300148656 /* Assets.xcassets */,
 				CE3AA37628C8F4A300148656 /* LaunchScreen.storyboard */,
@@ -100,6 +102,7 @@
 			buildConfigurationList = CE3AA37C28C8F4A300148656 /* Build configuration list for PBXNativeTarget "firstApp" */;
 			buildPhases = (
 				F31D890FA217AAE57F15CD08 /* [CP] Check Pods Manifest.lock */,
+				CE3E182A28CA36B500CBA179 /* Run SwiftLint */,
 				CE3AA36428C8F4A100148656 /* Sources */,
 				CE3AA36528C8F4A100148656 /* Frameworks */,
 				CE3AA36628C8F4A100148656 /* Resources */,
@@ -161,6 +164,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CE3E182A28CA36B500CBA179 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/Users/c.bahamondes.quiroga/Documents/Codigo\\ Xcode/firstWork/firstApp\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		DC75DEF242E0FD180F6BBD08 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */,
 				CE3AA37028C8F4A100148656 /* ViewController.swift in Sources */,
 				CE3AA36C28C8F4A100148656 /* AppDelegate.swift in Sources */,
 				CE3AA36E28C8F4A100148656 /* SceneDelegate.swift in Sources */,
