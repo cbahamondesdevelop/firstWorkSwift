@@ -1,54 +1,555 @@
-# By default, SwiftLint uses a set of sensible default rules you can adjust:
-disabled_rules: # rule identifiers turned on by default to exclude from running
+disabled_rules:
 
-opt_in_rules: # some rules are turned off by default, so you need to opt-in
-  - empty_count # Find all the available rules by running: `swiftlint rules`
+  - trailing_whitespace
 
-# Alternatively, specify all rules explicitly by uncommenting this option:
-# only_rules: # delete `disabled_rules` & `opt_in_rules` if using this
-#   - empty_parameters
-#   - vertical_whitespace
+  - trailing_comma
 
-included: # paths to include during linting. `--path` is ignored if present.
-  - SwiftLintTutorial
-  - Source
+  - file_name
+
+  - reduce_boolean
+
+
+
+opt_in_rules:
+
+  - anyobject_protocol
+
+  - array_init
+
+  - attributes
+
+  - closure_end_indentation
+
+  - closure_spacing
+
+  - colon
+
+  - convenience_type
+
+  - discouraged_object_literal
+
+  - discouraged_optional_boolean
+
+  - empty_enum_arguments
+
+  - empty_count
+
+  - empty_string
+
+  - explicit_init
+
+  - fatal_error_message
+
+  - file_length
+
+  - file_name
+
+  - first_where
+
+  - force_cast
+
+  - force_try
+
+  - force_unwrapping
+
+  - implicitly_unwrapped_optional
+
+  - joined_default_parameter
+
+  - legacy_cggeometry_functions
+
+  - legacy_constant
+
+  - legacy_constructor
+
+  - legacy_nsgeometry_functions
+
+  - modifier_order
+
+  - multiline_parameters
+
+  - operator_usage_whitespace
+
+  - overridden_super_call
+
+  - prefixed_toplevel_constant
+
+  - private_action
+
+  - private_outlet
+
+  - prohibited_interface_builder
+
+  - prohibited_super_call
+
+  - redundant_nil_coalescing
+
+  - redundant_string_enum_value
+
+  - redundant_void_return
+
+  - return_arrow_whitespace
+
+  - sorted_first_last
+
+  - switch_case_on_newline
+
+  - trailing_closure
+
+  - type_name
+
+  - unavailable_function
+
+  - unneeded_parentheses_in_closure_argument
+
+  - unused_closure_parameter
+
+  - unused_optional_binding
+
+  - vertical_whitespace
+
+  - vertical_parameter_alignment_on_call
+
+  - void_return
+
+  - yoda_condition
+
+
+
+convenience_type:
+
+  severity: error
+
+force_cast:
+
+  severity: error
+
+force_try:
+
+  severity: error
+
+force_unwrapping:
+
+  severity: error
+
+implicitly_unwrapped_optional:
+
+  severity: error
+
+joined_default_parameter:
+
+  severity: error
+
+legacy_cggeometry_functions:
+
+  severity: error
+
+legacy_constant:
+
+  severity: error
+
+legacy_constructor:
+
+  severity: error
+
+legacy_nsgeometry_functions:
+
+  severity: error
+
+line_length:
+
+  severity: error
+
+modifier_order:
+
+  severity: error
+
+multiline_parameters:
+
+  severity: error
+
+opening_brace:
+
+  severity: warning
+
+  allowMultilineFunc: false
+
+operator_usage_whitespace:
+
+  severity: error
+
+overridden_super_call:
+
+  severity: error
+
+prefixed_toplevel_constant:
+
+  severity: error
+
+private_action:
+
+  severity: error
+
+private_outlet:
+
+  severity: error
+
+prohibited_super_call:
+
+  severity: error
+
+redundant_nil_coalescing:
+
+  severity: error
+
+redundant_string_enum_value:
+
+  severity: error
+
+redundant_void_return:
+
+  severity: error
+
+return_arrow_whitespace:
+
+  severity: error
+
+sorted_first_last:
+
+  severity: error
+
+statement_position:
+
+  severity: error
+
+switch_case_on_newline:
+
+  severity: error
+
+trailing_closure:
+
+  severity: error
+
+trailing_newline:
+
+  severity: error
+
+todo:
+
+  severity: warning
+
+type_name:
+
+  severity: error
+
+unavailable_function:
+
+  severity: error
+
+unneeded_parentheses_in_closure_argument:
+
+  severity: error
+
+unused_closure_parameter:
+
+  severity: error
+
+unused_optional_binding:
+
+  severity: error
+
+vertical_whitespace:
+
+  severity: error
+
+vertical_parameter_alignment_on_call:
+
+  severity: error
+
+void_return:
+
+  severity: error
+
+yoda_condition:
+
+  severity: error
+
+
+
+colon:
+
+  apply_to_dictionaries: false
+
+
+
+# rules that have both warning and error levels, can set just the warning level
+
+# implicitly
+
+cyclomatic_complexity:
+
+  warning: 11
+
+  error: 12
+
+function_body_length:
+
+  warning: 80
+
+  error: 90
+
+line_length:
+
+  warning: 180
+
+  error: 181
+
+
+
+nesting:
+
+  type_level: 2
+
+
+
 excluded: # paths to ignore during linting. Takes precedence over `included`.
-  - Carthage
+
   - Pods
 
-analyzer_rules: # Rules run by `swiftlint analyze`
-  - explicit_self
+  - PrebuiltDependencies
 
-# configurable rules can be customized from this configuration file
-# binary rules can set their severity level
-force_cast: warning # implicitly
-force_try:
-  severity: warning # explicitly
-# rules that have both warning and error levels, can set just the warning level
-# implicitly
-line_length: 110
-# they can set both implicitly with an array
-type_body_length:
-  - 300 # warning
-  - 400 # error
-# or they can set both explicitly
-file_length:
-  warning: 500
-  error: 1200
-# naming rules can set warnings/errors for min_length and max_length
-# additionally they can set excluded names
-type_name:
-  min_length: 4 # only warning
-  max_length: # warning and error
-    warning: 40
-    error: 50
-  excluded: iPhone # excluded via string
-  allowed_symbols: ["_"] # these are allowed in type names
+  - DerivedData
+
+  - Carthage
+
+  - vendor
+
+  - ItauNaranjaTests
+
+  - ApplePay/ApplePayTests
+
+  - AdditionalCard/AdditionalCardTests
+
+  - BillPayment/BillPaymentTests
+
+  - BiometricAuthentication/BiometricAuthenticationTests
+
+  - CardActivation/CardActivationTests
+
+  - CardBlock/CardBlockTests
+
+  - Cards/CardsTests
+
+  - CashAdvance/CashAdvanceTests
+
+  - Chat/ChatTests
+
+  - Core/CoreTests
+
+  - CoreInvestments/CoreInvestmentsTests
+
+  - CoreLogin/CoreLoginTests
+
+  - CustomerInformation/CustomerInformationTests
+
+  - Dashboard/DashboardTests
+
+  - Investment/InvestmentTests
+
+  - InvestmentLiquidateDAP/InvestmentLiquidateDAPTests
+
+  - InvestmentMutualFunds/InvestmentMutualFundsTests
+
+  - InvestmentTermDeposit/InvestmentTermDepositTests
+
+  - ItauPass/ItauPassTests
+
+  - ItauPassToken/ItauPassTokenTests
+
+  - ItauPoints/ItauPointsTests
+
+  - LimitIncrease/LimitIncreaseTests
+
+  - Loan/LoanTests
+
+  - Login/LoginTests
+
+  - Menu/MenuTests
+
+  - MFA/MFATests
+
+  - MutualFunds/MutualFundsTests
+
+  - Offers/OffersTests
+
+  - Onboarding/OnboardingTests
+
+  - PasswordRecovery/PasswordRecoveryTests
+
+  - pushNotifications/PushNotificationsTests
+
+  - QRPayments/QRPaymentsTests
+
+  - SoftToken/SoftTokenTests
+
+  - SuperAppCore/Tests
+
+  - TermsAndConditions/TermsAndConditionsTests
+
+  - TestUtils
+
+  - Tracker/TrackerTests
+
+  - Transactions/TransactionsTests
+
+  - Transfers/TransfersTests
+
+  - TravelAuthorization/TravelAuthorizationTests
+
+  - UI/UITests
+
+  - Welcome/WelcomeTests
+
+  - DigitalCard/DigitalCardTests
+
+  - AditionalCardDashboard/AditionalCardDashboardTests
+
+  - CoreInvestmentsUI/CoreInvestmentsUITests
+
+  - Help/HelpTests
+
+  - PaymentsTC/PaymentsTCTests
+
+  - APV/APVTests
+
+  - InvestmentAPV/InvestmentAPVTests
+
+  - Networking/Tests/NetworkingTests
+
+  - ConsumerCredit/ConsumerCreditTests
+
+  - StockBroker/StockBrokerTests
+
+  - BuySell/BuySellTests
+
+
+
+custom_rules:
+
+  quickspec_class_name:
+
+    name: "Invalid Test Class Name"
+
+    regex: "class\\s+(.*)[^Tests]:\\s+QuickSpec"
+
+    message: "A test class name must end with 'Tests'"
+
+    severity: error
+
+
+
+  disable_print:
+
+    name: "print usage"
+
+    regex: "((\\bprint)|(Swift\\.print))\\s*\\("
+
+    included: ".*\\.swift"
+
+    message: "Prefer debugPrint over print"
+
+    severity: error
+
+
+
+  no_objcMembers:
+
+    name: "@objcMembers"
+
+    regex: "@objcMembers"
+
+    message: "Explicitly use @objc on each member you want to expose to Objective-C"
+
+    severity: error
+
+
+
+  forbid_constraint_activation:
+
+    name: "Avoid `NSLayoutConstraint.activate`"
+
+    included: "(^UI|.*View).*\\.swift"
+
+    regex: "NSLayoutConstraint\\.activate"
+
+    message: "Prefer using the project default `view.setupConstraints { ... }`"
+
+    match_kinds:
+
+      - identifier
+
+    severity: error
+
+
+
+  forbid_number_as_constant:
+
+    name: "Forbid hard constants"
+
+    included: "(^UI|.*View).*\\.swift"
+
+    regex: "(constant|top|left|right|bottom): ?-?\\d"
+
+    message: "Avoid declaring hard number constants"
+
+    match_kinds:
+
+      - identifier
+
+      - number
+
+    severity: error
+
+
+
+  final_class:
+
+    included: ".*.swift"
+
+    name: "Final class requirement"
+
+    regex: '^class'
+
+    message: "It's recommended that all classes be final. The only exception are classes that allow inheritance, in these cases, it is recommended that this rule be disabled.
+
+."
+
+    severity: error
+
+
+
+  public_final_only:
+
+    included: ".*.swift"
+
+    name: "Public Final class requirement"
+
+    regex: '^public class'
+
+    message: "All classes that are public must be final. If the class allows inheritance, it must be open."
+
+    severity: error
+
+
+
 identifier_name:
-  min_length: # only min_length
-    error: 4 # only error
-  excluded: # excluded via string array
+
+  error: 3
+
+  excluded:
+
+    - up
+
     - id
-    - URL
-    - GlobalAPIKey
-reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, codeclimate, junit, html, emoji, sonarqube, markdown, github-actions-logging)
+
+reporter: "xcode"

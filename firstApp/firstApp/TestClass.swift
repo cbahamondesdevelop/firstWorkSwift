@@ -7,7 +7,7 @@
 
 import Foundation
 // swiftlint:enable all
-class TestClass {
+final class Test {
     
-    let persona :   String  = "Persona1"
+    let persona: String = "Persona1"
 }
