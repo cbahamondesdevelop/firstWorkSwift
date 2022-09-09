@@ -11,9 +11,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewConfiguration()
         // Do any additional setup after loading the view.
     }
 
 
+}
+
+extension ViewController: BaseViewConfiguration {
+    func buildViewHierarchy() {
+        
+    }
+    func setupConstraints() {
+        
+    }
+    
 }
 
