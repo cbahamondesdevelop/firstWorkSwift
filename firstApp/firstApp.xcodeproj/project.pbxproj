@@ -16,6 +16,7 @@
 		CE3AA37528C8F4A300148656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3AA37428C8F4A300148656 /* Assets.xcassets */; };
 		CE3AA37828C8F4A300148656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3AA37628C8F4A300148656 /* LaunchScreen.storyboard */; };
 		CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E182C28CA43BC00CBA179 /* TestClass.swift */; };
+		CE3E183828CF72E100CBA179 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183728CF72E100CBA179 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CE3AA37728C8F4A300148656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE3AA37928C8F4A300148656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE3E182C28CA43BC00CBA179 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
+		CE3E183728CF72E100CBA179 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		CE3AA36A28C8F4A100148656 /* firstApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE3E183428CF724300CBA179 /* Login */,
 				35D9AD7B28CB67510062BFF4 /* Core */,
 				CE3AA36B28C8F4A100148656 /* AppDelegate.swift */,
 				CE3AA36D28C8F4A100148656 /* SceneDelegate.swift */,
@@ -103,6 +106,30 @@
 				CE3AA37928C8F4A300148656 /* Info.plist */,
 			);
 			path = firstApp;
+			sourceTree = "<group>";
+		};
+		CE3E183428CF724300CBA179 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E183528CF726900CBA179 /* Screens */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE3E183528CF726900CBA179 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E183628CF728700CBA179 /* LoginScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CE3E183628CF728700CBA179 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E183728CF72E100CBA179 /* LoginViewController.swift */,
+			);
+			path = LoginScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3E183828CF72E100CBA179 /* LoginViewController.swift in Sources */,
 				CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */,
 				35D9AD7F28CB67A20062BFF4 /* NSLayoutConstraint.swift in Sources */,
 				35D9AD7D28CB67690062BFF4 /* BaseViewConfiguration.swift in Sources */,
