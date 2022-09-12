@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-final class LoginViewController: UIViewController, BaseViewConfiguration {
+final class LoginViewController: UIViewController, BaseViewConfiguration, UITextFieldDelegate {
     
-    var test1 = 200.0
+    // var test1 = 200.0
     
     private lazy var backgroundView: UIView = {
         let view = UIView(frame: .zero)
@@ -43,6 +43,19 @@ final class LoginViewController: UIViewController, BaseViewConfiguration {
         return label
     }()
     
+    private(set) lazy var textFieldUser: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .none
+        textField.delegate = self
+        
+        let view = inputAccessoryView
+        // backgroundView.delegate = self
+        textField.text = "PRUEBA"
+        textField.inputAccessoryView = view
+        return textField
+    }()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         self.view.backgroundColor = .white
@@ -58,6 +71,7 @@ final class LoginViewController: UIViewController, BaseViewConfiguration {
         
         backgroundView.addSubview(titleLabel)
         backgroundView.addSubview(descriptionLabel)
+        backgroundView.addSubview(textFieldUser)
         
         self.titleLabel.setupConstraints { view -> [NSLayoutConstraint] in [
         
@@ -70,10 +84,18 @@ final class LoginViewController: UIViewController, BaseViewConfiguration {
         
         self.descriptionLabel.setupConstraints { view -> [NSLayoutConstraint] in [
         
-            .top(firstItem: view, secondItem: backgroundView, constant: test1),
+            .top(firstItem: view, secondItem: backgroundView, constant: constant200),
             .left(firstItem: view, secondItem: backgroundView, constant: constant60),
-            .right(firstItem: view, secondItem: backgroundView)
+            .right(firstItem: backgroundView, secondItem: view)
         
+        ]
+        }
+        
+        self.textFieldUser.setupConstraints { view -> [NSLayoutConstraint] in [
+         
+            .top(firstItem: view, secondItem: backgroundView, constant: constant280),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant14),
+            .right(firstItem: backgroundView, secondItem: view)
         ]
         }
     }

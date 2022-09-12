@@ -159,6 +159,10 @@ public extension BaseViewConfiguration {
         return 145.0
     }
     
+    var constant200: CGFloat {
+        return 200.0
+    }
+    
     var constant280: CGFloat {
         return 280.0
     }
