@@ -10,6 +10,8 @@ import UIKit
 
 final class LoginViewController: UIViewController, BaseViewConfiguration {
     
+    var test1 = 200.0
+    
     private lazy var backgroundView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .yellow
@@ -24,15 +26,27 @@ final class LoginViewController: UIViewController, BaseViewConfiguration {
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
         // label.font = .itauRegularFont(withSize: constant16)
+        label.font = .boldSystemFont(ofSize: 34)
         // label.text = L10n.temporaryBlockDetailMessage
         label.text = "TMDB APP"
         // label.textColor = .itauN80
         return label
     }()
     
+    private lazy var descriptionLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 4
+        label.lineBreakMode = .byWordWrapping
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 16)
+        label.text = "Este usuario es con el cual ingresar en \nTMDB para iniciar sesion. \nsolo utilizaremos esto para consultar \npreferencias"
+        return label
+    }()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
-        // self.view.backgroundColor = .brown
+        self.view.backgroundColor = .white
+        setupViewConfiguration()
     }
    
    @available(*, unavailable)
@@ -43,12 +57,22 @@ final class LoginViewController: UIViewController, BaseViewConfiguration {
     func setupConstraints() {
         
         backgroundView.addSubview(titleLabel)
+        backgroundView.addSubview(descriptionLabel)
         
         self.titleLabel.setupConstraints { view -> [NSLayoutConstraint] in [
         
-            .top(firstItem: view, secondItem: backgroundView, constant: constant10),
-            .left(firstItem: view, secondItem: backgroundView),
+            .top(firstItem: view, secondItem: backgroundView, constant: constant128),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant128),
             .right(firstItem: backgroundView, secondItem: view)
+        
+        ]
+        }
+        
+        self.descriptionLabel.setupConstraints { view -> [NSLayoutConstraint] in [
+        
+            .top(firstItem: view, secondItem: backgroundView, constant: test1),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant60),
+            .right(firstItem: view, secondItem: backgroundView)
         
         ]
         }
@@ -57,10 +81,11 @@ final class LoginViewController: UIViewController, BaseViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(backgroundView)
         backgroundView.addSubview(titleLabel)
+        backgroundView.addSubview(descriptionLabel)
     }
     
     func configureView() {
-        self.titleLabel.text = "Hola"
+        
     }
     
 }
