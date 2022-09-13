@@ -14,6 +14,7 @@ final class GenreMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        genreMovies.listGenre.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
