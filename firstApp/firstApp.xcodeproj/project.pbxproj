@@ -17,6 +17,8 @@
 		CE3AA37828C8F4A300148656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3AA37628C8F4A300148656 /* LaunchScreen.storyboard */; };
 		CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E182C28CA43BC00CBA179 /* TestClass.swift */; };
 		CE3E183828CF72E100CBA179 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183728CF72E100CBA179 /* LoginViewController.swift */; };
+		CE3E183B28D102B600CBA179 /* GenreMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183A28D102B600CBA179 /* GenreMoviesView.swift */; };
+		CE3E183D28D102D700CBA179 /* GenreMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183C28D102D700CBA179 /* GenreMoviesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CE3AA37928C8F4A300148656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE3E182C28CA43BC00CBA179 /* TestClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
 		CE3E183728CF72E100CBA179 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE3E183A28D102B600CBA179 /* GenreMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMoviesView.swift; sourceTree = "<group>"; };
+		CE3E183C28D102D700CBA179 /* GenreMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMoviesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		CE3E183528CF726900CBA179 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CE3E183928D1014D00CBA179 /* GenreMovies */,
 				CE3E183628CF728700CBA179 /* LoginScreen */,
 			);
 			path = Screens;
@@ -130,6 +135,15 @@
 				CE3E183728CF72E100CBA179 /* LoginViewController.swift */,
 			);
 			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		CE3E183928D1014D00CBA179 /* GenreMovies */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E183A28D102B600CBA179 /* GenreMoviesView.swift */,
+				CE3E183C28D102D700CBA179 /* GenreMoviesViewController.swift */,
+			);
+			path = GenreMovies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3E183D28D102D700CBA179 /* GenreMoviesViewController.swift in Sources */,
 				CE3E183828CF72E100CBA179 /* LoginViewController.swift in Sources */,
 				CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */,
 				35D9AD7F28CB67A20062BFF4 /* NSLayoutConstraint.swift in Sources */,
@@ -272,6 +287,7 @@
 				CE3AA37028C8F4A100148656 /* ViewController.swift in Sources */,
 				CE3AA36C28C8F4A100148656 /* AppDelegate.swift in Sources */,
 				CE3AA36E28C8F4A100148656 /* SceneDelegate.swift in Sources */,
+				CE3E183B28D102B600CBA179 /* GenreMoviesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
