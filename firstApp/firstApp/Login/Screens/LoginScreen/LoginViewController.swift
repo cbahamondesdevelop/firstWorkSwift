@@ -10,11 +10,11 @@ import UIKit
 
 final class LoginViewController: UIViewController, BaseViewConfiguration, UITextFieldDelegate {
     
-    // var test1 = 200.0
+    // var test1 = 60.0
     
     private lazy var backgroundView: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         // view.layer.addroundcorners(radius: 4.0)
         return view
@@ -43,17 +43,59 @@ final class LoginViewController: UIViewController, BaseViewConfiguration, UIText
         return label
     }()
     
+    private lazy var userLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 20)
+        label.text = "Usuario"
+        return label
+    }()
+    
+    private lazy var passwordLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 20)
+        label.text = "Contraseña"
+        return label
+    }()
+    
     private(set) lazy var textFieldUser: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .none
+        textField.layer.borderWidth = 2.0
+        textField.layer.borderColor = UIColor.black.cgColor
         textField.delegate = self
         
         let view = inputAccessoryView
         // backgroundView.delegate = self
-        textField.text = "PRUEBA"
+        // textField.text = "PRUEBA"
         textField.inputAccessoryView = view
         return textField
+    }()
+    
+    private(set) lazy var textFieldPassword: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.borderWidth = 2.0
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.delegate = self
+        
+        let view = inputAccessoryView
+        // backgroundView.delegate = self
+        // textField.text = "PRUEBA PASS"
+        textField.inputAccessoryView = view
+        return textField
+    }()
+    
+    private lazy var continueButton: UIButton = {
+
+        let button = UIButton()
+        button.titleLabel?.text = "Continuar"
+        return button
     }()
     
     init() {
@@ -69,9 +111,14 @@ final class LoginViewController: UIViewController, BaseViewConfiguration, UIText
     
     func setupConstraints() {
         
-        backgroundView.addSubview(titleLabel)
-        backgroundView.addSubview(descriptionLabel)
-        backgroundView.addSubview(textFieldUser)
+        self.backgroundView.setupConstraints { view -> [NSLayoutConstraint] in [
+        
+            .top(firstItem: view, secondItem: self.view),
+            .bottom(firstItem: view, secondItem: self.view),
+            .left(firstItem: view, secondItem: self.view),
+            .right(firstItem: view, secondItem: self.view)
+        ]
+        }
         
         self.titleLabel.setupConstraints { view -> [NSLayoutConstraint] in [
         
@@ -84,26 +131,67 @@ final class LoginViewController: UIViewController, BaseViewConfiguration, UIText
         
         self.descriptionLabel.setupConstraints { view -> [NSLayoutConstraint] in [
         
-            .top(firstItem: view, secondItem: backgroundView, constant: constant200),
+            .over(topItem: titleLabel, bottomItem: view, constant: constant20),
             .left(firstItem: view, secondItem: backgroundView, constant: constant60),
             .right(firstItem: backgroundView, secondItem: view)
         
         ]
         }
         
+        self.userLabel.setupConstraints { view -> [NSLayoutConstraint] in [
+
+            .over(topItem: descriptionLabel, bottomItem: view, constant: constant40),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant60),
+            .right(firstItem: backgroundView, secondItem: view)
+
+        ]
+        }
+        
         self.textFieldUser.setupConstraints { view -> [NSLayoutConstraint] in [
          
-            .top(firstItem: view, secondItem: backgroundView, constant: constant280),
-            .left(firstItem: view, secondItem: backgroundView, constant: constant14),
+            .over(topItem: userLabel, bottomItem: view, constant: constant14),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant60),
+            .width(view: view, constant: constant280)
+        ]
+        }
+        
+        self.passwordLabel.setupConstraints { view -> [NSLayoutConstraint] in [
+
+            .over(topItem: textFieldUser, bottomItem: view, constant: constant40),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant60),
             .right(firstItem: backgroundView, secondItem: view)
+
+        ]
+        }
+        
+        self.textFieldPassword.setupConstraints { view -> [NSLayoutConstraint] in [
+         
+            .over(topItem: passwordLabel, bottomItem: view, constant: constant14),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant60),
+            .width(view: view, constant: constant280)
+        ]
+        }
+        
+        self.continueButton.setupConstraints { view -> [NSLayoutConstraint] in [
+
+            .bottom(firstItem: backgroundView, secondItem: view, constant: constant6),
+            .left(firstItem: view, secondItem: backgroundView, constant: constant60),
+            .right(firstItem: backgroundView, secondItem: view),
+            .height(view: view, constant: constant48)
         ]
         }
     }
     
     func buildViewHierarchy() {
+        
         view.addSubview(backgroundView)
         backgroundView.addSubview(titleLabel)
         backgroundView.addSubview(descriptionLabel)
+        backgroundView.addSubview(userLabel)
+        backgroundView.addSubview(textFieldUser)
+        backgroundView.addSubview(passwordLabel)
+        backgroundView.addSubview(textFieldPassword)
+        backgroundView.addSubview(continueButton)
     }
     
     func configureView() {
