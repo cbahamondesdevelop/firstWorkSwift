@@ -94,7 +94,10 @@ final class LoginViewController: UIViewController, BaseViewConfiguration, UIText
     private lazy var continueButton: UIButton = {
 
         let button = UIButton()
-        button.titleLabel?.text = "Continuar"
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Continuar", for: .normal)
+        button.backgroundColor = .yellow
+        button.setTitleColor(UIColor.black, for: .normal)
         return button
     }()
     
@@ -174,10 +177,11 @@ final class LoginViewController: UIViewController, BaseViewConfiguration, UIText
         
         self.continueButton.setupConstraints { view -> [NSLayoutConstraint] in [
 
-            .bottom(firstItem: backgroundView, secondItem: view, constant: constant6),
+            .bottom(firstItem: backgroundView, secondItem: view, constant: constant100),
             .left(firstItem: view, secondItem: backgroundView, constant: constant60),
-            .right(firstItem: backgroundView, secondItem: view),
-            .height(view: view, constant: constant48)
+            // .right(firstItem: backgroundView, secondItem: view),
+            .height(view: view, constant: constant48),
+            .width(view: view, constant: constant280)
         ]
         }
     }
