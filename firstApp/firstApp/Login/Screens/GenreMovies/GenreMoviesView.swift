@@ -27,6 +27,16 @@ final class GenreMoviesView: UIView {
         return table
     }()
     
+    private lazy var continueButton: UIButton = {
+
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Continuar", for: .normal)
+        button.backgroundColor = .yellow
+        button.setTitleColor(UIColor.black, for: .normal)
+        return button
+    }()
+    
     init() {
         super.init(frame: .zero)
         self.setupViewConfiguration()
@@ -48,6 +58,7 @@ extension GenreMoviesView: BaseViewConfiguration {
         listGenre.register(UITableViewCell.self, forCellReuseIdentifier: "TablaGeneros")
         self.addSubview(self.titleLabel)
         self.addSubview(self.listGenre)
+        self.addSubview(self.continueButton)
     }
     
     func setupConstraints() {
@@ -67,6 +78,16 @@ extension GenreMoviesView: BaseViewConfiguration {
             .left(firstItem: view, secondItem: self),
             .right(firstItem: self, secondItem: view),
             .height(view: view, constant: constant280)
+        ]
+        }
+        
+        self.continueButton.setupConstraints { view -> [NSLayoutConstraint] in [
+
+            .bottom(firstItem: self, secondItem: view, constant: constant100),
+            .left(firstItem: view, secondItem: self, constant: constant60),
+            // .right(firstItem: backgroundView, secondItem: view),
+            .height(view: view, constant: constant48),
+            .width(view: view, constant: constant280)
         ]
         }
     }
