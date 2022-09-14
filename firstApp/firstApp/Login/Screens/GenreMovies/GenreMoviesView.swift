@@ -47,15 +47,13 @@ final class GenreMoviesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let generos = ["Accion", "Suspenso", "Drama", "Comedia"]
-    
 }
 
 extension GenreMoviesView: BaseViewConfiguration {
     
     func buildViewHierarchy() {
-        listGenre.dataSource = self
-        listGenre.register(UITableViewCell.self, forCellReuseIdentifier: "TablaGeneros")
+        // listGenre.dataSource = self
+        // listGenre.register(UITableViewCell.self, forCellReuseIdentifier: "TablaGeneros")
         self.addSubview(self.titleLabel)
         self.addSubview(self.listGenre)
         self.addSubview(self.continueButton)
@@ -95,19 +93,4 @@ extension GenreMoviesView: BaseViewConfiguration {
     func configureView() {
         self.backgroundColor = .white
     }
-}
-
-extension GenreMoviesView: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        generos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TablaGeneros", for: indexPath)
-        cell.textLabel?.text = generos[indexPath.row]
-        return cell
-    }
-    
 }

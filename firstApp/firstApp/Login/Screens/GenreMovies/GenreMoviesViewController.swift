@@ -10,11 +10,18 @@ import UIKit
 
 final class GenreMoviesViewController: UIViewController {
    
-    private let genreMovies = GenreMoviesView()
+    let generos = ["Accion", "Suspenso", "Drama", "Comedia"]
+    
+    private lazy var genreMoviesView:GenreMoviesView = {
+        let genreMovies = GenreMoviesView()
+        genreMovies.listGenre.dataSource = self
+        return genreMovies
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        genreMovies.listGenre.reloadData()
+        genreMoviesView.listGenre.reloadData()
+        genreMoviesView.listGenre.register(UITableViewCell.self, forCellReuseIdentifier: "TablaGeneros")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,6 +33,20 @@ final class GenreMoviesViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = self.genreMovies
+        self.view = self.genreMoviesView
+    }
+}
+
+extension GenreMoviesViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        generos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TablaGeneros", for: indexPath)
+        cell.textLabel?.text = generos[indexPath.row]
+        return cell
     }
 }
