@@ -17,7 +17,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         // let controller = LoginViewController()
-        let controller = GenreMoviesViewController()
+        let controller = GenreTVShowViewController()
         window?.rootViewController = controller
         
         window?.makeKeyAndVisible()

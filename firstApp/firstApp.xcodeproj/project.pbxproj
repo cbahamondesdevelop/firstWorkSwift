@@ -19,6 +19,8 @@
 		CE3E183828CF72E100CBA179 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183728CF72E100CBA179 /* LoginViewController.swift */; };
 		CE3E183B28D102B600CBA179 /* GenreMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183A28D102B600CBA179 /* GenreMoviesView.swift */; };
 		CE3E183D28D102D700CBA179 /* GenreMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183C28D102D700CBA179 /* GenreMoviesViewController.swift */; };
+		CE3E184028D24B1E00CBA179 /* GenreTVShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E183F28D24B1E00CBA179 /* GenreTVShowView.swift */; };
+		CE3E184228D24B4800CBA179 /* GenreTVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E184128D24B4800CBA179 /* GenreTVShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		CE3E183728CF72E100CBA179 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CE3E183A28D102B600CBA179 /* GenreMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMoviesView.swift; sourceTree = "<group>"; };
 		CE3E183C28D102D700CBA179 /* GenreMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreMoviesViewController.swift; sourceTree = "<group>"; };
+		CE3E183F28D24B1E00CBA179 /* GenreTVShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTVShowView.swift; sourceTree = "<group>"; };
+		CE3E184128D24B4800CBA179 /* GenreTVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTVShowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		CE3E183528CF726900CBA179 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CE3E183E28D24A0700CBA179 /* GenreTVShow */,
 				CE3E183928D1014D00CBA179 /* GenreMovies */,
 				CE3E183628CF728700CBA179 /* LoginScreen */,
 			);
@@ -144,6 +149,15 @@
 				CE3E183C28D102D700CBA179 /* GenreMoviesViewController.swift */,
 			);
 			path = GenreMovies;
+			sourceTree = "<group>";
+		};
+		CE3E183E28D24A0700CBA179 /* GenreTVShow */ = {
+			isa = PBXGroup;
+			children = (
+				CE3E183F28D24B1E00CBA179 /* GenreTVShowView.swift */,
+				CE3E184128D24B4800CBA179 /* GenreTVShowViewController.swift */,
+			);
+			path = GenreTVShow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +298,11 @@
 				CE3E182D28CA43BC00CBA179 /* TestClass.swift in Sources */,
 				35D9AD7F28CB67A20062BFF4 /* NSLayoutConstraint.swift in Sources */,
 				35D9AD7D28CB67690062BFF4 /* BaseViewConfiguration.swift in Sources */,
+				CE3E184028D24B1E00CBA179 /* GenreTVShowView.swift in Sources */,
 				CE3AA37028C8F4A100148656 /* ViewController.swift in Sources */,
 				CE3AA36C28C8F4A100148656 /* AppDelegate.swift in Sources */,
 				CE3AA36E28C8F4A100148656 /* SceneDelegate.swift in Sources */,
+				CE3E184228D24B4800CBA179 /* GenreTVShowViewController.swift in Sources */,
 				CE3E183B28D102B600CBA179 /* GenreMoviesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
