@@ -14,6 +14,7 @@ final class GenreTVShowViewController: UIViewController {
     
     private lazy var genreTVShowView:GenreTVShowView = {
         let genreTVShow = GenreTVShowView()
+        genreTVShow.delegate = self
         genreTVShow.listGenre.dataSource = self
         return genreTVShow
     }()
@@ -48,5 +49,11 @@ extension GenreTVShowViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TablaGeneros", for: indexPath)
         cell.textLabel?.text = generosTV[indexPath.row]
         return cell
+    }
+}
+
+extension GenreTVShowViewController: GenreTVShowDelegate {
+    func onClickButton() {
+        debugPrint("1")
     }
 }

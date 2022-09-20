@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
+protocol GenreTVShowDelegate: UITextFieldDelegate {
+    func onClickButton()
+}
+
 final class GenreTVShowView: UIView {
+    
+    public weak var delegate: GenreTVShowDelegate?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -34,6 +40,7 @@ final class GenreTVShowView: UIView {
         button.setTitle("Continuar", for: .normal)
         button.backgroundColor = .yellow
         button.setTitleColor(UIColor.black, for: .normal)
+        button.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
         return button
     }()
     
@@ -49,11 +56,17 @@ final class GenreTVShowView: UIView {
     
 }
 
+extension GenreTVShowView {
+    
+    @objc
+    private func clickButton() {
+        delegate?.onClickButton()
+    }
+}
+
 extension GenreTVShowView: BaseViewConfiguration {
     
     func buildViewHierarchy() {
-        // listGenre.dataSource = self
-        // listGenre.register(UITableViewCell.self, forCellReuseIdentifier: "TablaGeneros")
         self.addSubview(self.titleLabel)
         self.addSubview(self.listGenre)
         self.addSubview(self.continueButton)
